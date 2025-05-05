@@ -155,7 +155,7 @@ void GameService::GetGamebyName(const char* gameName,const app42CallBack& pSelec
     }
     
     string resource = "game/";
-	resource.append(gameName);
+	resource.append(url_encode(gameName));
     
 	string url = getBaseUrl(resource);
 	string timestamp = Util::getTimeStamp();
