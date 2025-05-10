@@ -648,7 +648,7 @@ void ScoreBoardService::GetTopNRankers(const char* gameName,int max,const app42C
     }
 
     string resource = "game/scoreboard/";
-    resource.append(gameName);
+    resource.append(url_encode(gameName));
 	resource.append("/rankers/");
     resource.append(Util::ItoA(max));
     
@@ -701,7 +701,7 @@ void ScoreBoardService::GetUserRanking(const char* gameName, const char* userNam
     }
 
     string resource = "game/scoreboard/";
-    resource.append(gameName);
+    resource.append(url_encode(gameName));
     resource.append("/");
     resource.append(userName);
 	resource.append("/ranking");
@@ -770,7 +770,7 @@ void ScoreBoardService::GetScoresByUser(const char* gameName,const char* userNam
      * Creating URL
      */
     string resource = "game/scoreboard/";
-    resource.append(gameName);
+    resource.append(url_encode(gameName));
     resource.append("/");
     resource.append(userName);
 	string url = getBaseUrl(resource);
